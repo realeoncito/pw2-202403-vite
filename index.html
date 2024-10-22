@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Succulent Miracle Spray</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="less/main.less" type="text/css">
 </head>
 <body>
     <header>
         <div class="container">
           <section class="branding">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="https://picsum.photos/id/20/32/32" alt="Logo" class="logo">
             <h1>Succulent Miracle Spray</h1>
           </section>
             <nav>
@@ -31,6 +31,11 @@
 
     <main>
         <section class="hero">
+            <picture>
+                <source srcset="https://picsum.photos/id/180/1300/720" media="(min-width:1025px)"/>
+                <source srcset="https://picsum.photos/id/180/1024/640" media="(min-width:720px)"/>
+                <img src="https://picsum.photos/id/180/1300/720" alt="hero panel img"/>
+            </picture>
             <div class="container">
                 <h2>Unlock Your Succulents' Full Potential</h2>
                 <p>Our miraculous spray transforms ordinary succulents into vibrant masterpieces.</p>
@@ -66,7 +71,5 @@
             </ul>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

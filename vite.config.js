@@ -5,7 +5,7 @@ import path, { resolve } from "node:path";
 const getHtmlEntries = ()=>{
     return Object.fromEntries(
         [
-            ...glob.sync('./**/*.html', { ignore:'./dist/**'}).map(file=>[
+            ...glob.sync('./**/*.html', { ignore:['./dist/**','./node_modules/**']}).map(file=>[
                 file.slice(0, file.length - path.extname(file).length),
                 resolve(__dirname, file)
             ])
