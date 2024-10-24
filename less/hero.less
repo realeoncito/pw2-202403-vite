@@ -36,6 +36,10 @@
             color: @primary-text-color;
             text-align: center;
             text-decoration: none;
+            transition: background-color 1s ease;
+            &:hover {
+                background-color: lighten(@primary-background-color-dark, 50%);
+            }
         }
     }
 }
