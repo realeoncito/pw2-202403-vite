@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import * as glob from "glob";
 import path, { resolve } from "node:path";
 import htmlPurge from 'vite-plugin-purgecss';
+import handlebars from 'vite-plugin-handlebars';
 
 const getHtmlEntries = ()=>{
     return Object.fromEntries(
@@ -13,12 +14,6 @@ const getHtmlEntries = ()=>{
         ]
     )
 }
-/*
-{
-    nombreArchiv: rutaDeArchivo,
-    nombreArchiv2: rutaDeArchivo2,
-}
-*/
 
 export default defineConfig(
     {
@@ -30,6 +25,11 @@ export default defineConfig(
             }
         },
         plugins: [
+            handlebars(
+                {
+                    partialDirectory: resolve(__dirname, 'partials'),
+                }
+            ),
             htmlPurge({}),
         ]
     }
