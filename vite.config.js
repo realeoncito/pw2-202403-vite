@@ -3,6 +3,7 @@ import * as glob from "glob";
 import path, { resolve } from "node:path";
 import htmlPurge from 'vite-plugin-purgecss';
 import handlebars from 'vite-plugin-handlebars';
+import {generarContextoDePagina} from './data/index';
 
 const getHtmlEntries = ()=>{
     return Object.fromEntries(
@@ -28,6 +29,7 @@ export default defineConfig(
             handlebars(
                 {
                     partialDirectory: resolve(__dirname, 'partials'),
+                    context: generarContextoDePagina
                 }
             ),
             htmlPurge({}),
