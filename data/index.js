@@ -1,5 +1,6 @@
 import { getGalleryData } from "./galeria/datosGaleria";
 import { getHeroData } from "./hero/hero";
+import {getTestimonios} from "./testimonios/testimonios"
 
 //----------------Nav
 import navData from "./global/nav";
@@ -13,12 +14,15 @@ export const generarContextoDePagina = (page)=>{
         ...navData,
     };
     let pageObject = {}
+    let testimoniosObject = {}
+
     switch(page){
         case '/gallery.html':
             pageObject = getGalleryData();
             break;
         case '/index.html':
             pageObject = getHeroData();
+            testimoniosObject = getTestimonios();
             break;
         case '/productos/producto1.html':
             pageObject = getProductData();
@@ -28,6 +32,7 @@ export const generarContextoDePagina = (page)=>{
     }
     return {
         ...contextObject,
-        ...pageObject
+        ...pageObject,
+        ...testimoniosObject
     }
 }

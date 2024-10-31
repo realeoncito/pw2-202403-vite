@@ -1,0 +1,16 @@
+<section class="testimonials-section">
+    <h2 class="section-title">Testimonios de nuestros clientes</h2>
+    <div class="testimonials-container">
+        {{#each testimonios}}
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="{{this.imgUrl}}" alt="{{this.imgAlt}}">
+            </div>
+            <div class="testimonial-content">
+                <h3>{{this.nombre}}</h3>
+                <p>"{{this.testimonio}}"</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
