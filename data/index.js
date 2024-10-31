@@ -1,13 +1,17 @@
 import { getGalleryData } from "./galeria/datosGaleria";
 import { getHeroData } from "./hero/hero";
 
+//----------------Nav
+import navData from "./global/nav";
 //--------------- Productos 
 
 import { getProductData } from "./productos/producto1";
 
 export const generarContextoDePagina = (page)=>{
     console.log('page', page);
-    const contextObject = {};
+    const contextObject = {
+        ...navData,
+    };
     let pageObject = {}
     switch(page){
         case '/gallery.html':
