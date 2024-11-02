@@ -1,6 +1,7 @@
 import { getGalleryData } from "./galeria/datosGaleria";
 import { getHeroData } from "./hero/hero";
 import {getTestimonios} from "./testimonios/testimonios"
+import deportes from "./tablaDeporte/deportes"
 
 //----------------Nav
 import navData from "./global/nav";
@@ -23,6 +24,10 @@ export const generarContextoDePagina = (page)=>{
         case '/index.html':
             pageObject = getHeroData();
             testimoniosObject = getTestimonios();
+            pageObject = {
+                ...pageObject,
+                ...deportes
+            }
             break;
         case '/productos/producto1.html':
             pageObject = getProductData();
